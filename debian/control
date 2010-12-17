@@ -10,7 +10,7 @@ Vcs-Browser: http://github.com/grahamedgecombe/minecraft-installer
 
 Package: minecraft-installer
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, default-jre
+Depends: ${misc:Depends}, default-jre
 Pre-Depends: curl, imagemagick
 Description: Minecraft
  Downloads and installs the official Minecraft client.
