@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Minecraft
+GenericName=Sandbox Building Game
+Icon=minecraft-installer
+Exec=/usr/bin/java -Xmx1024M -Xms512M -cp /usr/share/minecraft-installer/Minecraft.jar net.minecraft.LauncherFrame
+Terminal=false
+Categories=Game

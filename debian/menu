@@ -1,0 +1,3 @@
+?package(minecraft-installer):needs="X11" section="Games"\
+  title="Minecraft" command="/usr/bin/java -Xmx1024M -Xms512M -cp /usr/share/minecraft-installer/Minecraft.jar net.minecraft.LauncherFrame"\
+  icon="/usr/share/pixmaps/minecraft-installer.xpm"

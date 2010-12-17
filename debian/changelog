@@ -1,0 +1,5 @@
+minecraft-installer (1.0) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Graham Edgecombe <grahamedgecombe@gmail.com>  Fri, 17 Dec 2010 13:55:23 +0000
