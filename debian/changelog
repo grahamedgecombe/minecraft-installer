@@ -1,5 +1,13 @@
+minecraft-installer (1.1) unstable; urgency=low
+
+  * Can now use curl or wget to download the jar/icon files
+  * Depends on openjdk-6-jre or sun-java6-jre to stop GCJ getting pulled in on
+    Debian (which is incompatible anyway)
+
+ -- Graham Edgecombe <grahamedgecombe@gmail.com>  Sat, 18 Dec 2010 19:42:49 +0000
+
 minecraft-installer (1.0) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
  -- Graham Edgecombe <grahamedgecombe@gmail.com>  Fri, 17 Dec 2010 13:55:23 +0000

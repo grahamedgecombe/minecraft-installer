@@ -3,14 +3,14 @@ Section: games
 Priority: extra
 Maintainer: Graham Edgecombe <grahamedgecombe@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Homepage: http://www.grahamedgecombe.com/projects/minecraft-installer
 Vcs-Git: git://github.com/grahamedgecombe/minecraft-installer.git
 Vcs-Browser: http://github.com/grahamedgecombe/minecraft-installer
 
 Package: minecraft-installer
 Architecture: all
-Depends: ${misc:Depends}, default-jre
-Pre-Depends: curl, imagemagick
+Depends: ${misc:Depends}, openjdk-6-jre | sun-java6-jre
+Pre-Depends: wget | curl, imagemagick
 Description: Minecraft
  Downloads and installs the official Minecraft client.
