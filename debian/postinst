@@ -20,32 +20,32 @@ set -e
 
 case "$1" in
     configure)
-	MINECRAFT_JAR_SRC=http://www.minecraft.net/download/Minecraft.jar
-	MINECRAFT_ICON_SRC=http://www.minecraft.net/favicon.png
+    MINECRAFT_JAR_SRC=http://www.minecraft.net/download/Minecraft.jar
+    MINECRAFT_ICON_SRC=http://www.minecraft.net/favicon.png
 
-        MINECRAFT_JAR_TMP=`tempfile -p minecraft -s .jar`
-	MINECRAFT_ICON_TMP=`tempfile -p favicon -s .png`
+    MINECRAFT_JAR_TMP=`tempfile -p minecraft -s .jar`
+    MINECRAFT_ICON_TMP=`tempfile -p favicon -s .png`
 
-	MINECRAFT_JAR_DST=/usr/share/minecraft-installer/Minecraft.jar
-	MINECRAFT_ICON_DST_XPM=/usr/share/pixmaps/minecraft-installer.xpm
-	MINECRAFT_ICON_DST_PNG=/usr/share/pixmaps/minecraft-installer.png
+    MINECRAFT_JAR_DST=/usr/share/minecraft-installer/Minecraft.jar
+    MINECRAFT_ICON_DST_XPM=/usr/share/pixmaps/minecraft-installer.xpm
+    MINECRAFT_ICON_DST_PNG=/usr/share/pixmaps/minecraft-installer.png
 
-	if [ -e /usr/bin/wget ]; then
-		wget -O $MINECRAFT_JAR_TMP $MINECRAFT_JAR_SRC
-		wget -O $MINECRAFT_ICON_TMP $MINECRAFT_ICON_SRC
-	else
-        	curl $MINECRAFT_JAR_SRC >$MINECRAFT_JAR_TMP
-		curl $MINECRAFT_ICON_SRC >$MINECRAFT_ICON_TMP
-	fi
+    if [ -e /usr/bin/wget ]; then
+        wget -O $MINECRAFT_JAR_TMP $MINECRAFT_JAR_SRC
+        wget -O $MINECRAFT_ICON_TMP $MINECRAFT_ICON_SRC
+    else
+        curl $MINECRAFT_JAR_SRC >$MINECRAFT_JAR_TMP
+        curl $MINECRAFT_ICON_SRC >$MINECRAFT_ICON_TMP
+    fi
 
-        mv $MINECRAFT_JAR_TMP $MINECRAFT_JAR_DST
+    mv $MINECRAFT_JAR_TMP $MINECRAFT_JAR_DST
 
-	convert $MINECRAFT_ICON_TMP -resize 32x32 $MINECRAFT_ICON_DST_XPM
-	mv $MINECRAFT_ICON_TMP $MINECRAFT_ICON_DST_PNG
+    convert $MINECRAFT_ICON_TMP -resize 32x32 $MINECRAFT_ICON_DST_XPM
+    mv $MINECRAFT_ICON_TMP $MINECRAFT_ICON_DST_PNG
 
-	chmod 0644 $MINECRAFT_JAR_DST
-	chmod 0644 $MINECRAFT_ICON_DST_XPM
-	chmod 0644 $MINECRAFT_ICON_DST_PNG
+    chmod 0644 $MINECRAFT_JAR_DST
+    chmod 0644 $MINECRAFT_ICON_DST_XPM
+    chmod 0644 $MINECRAFT_ICON_DST_PNG
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

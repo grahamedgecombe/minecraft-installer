@@ -20,8 +20,8 @@ set -e
 case "$1" in
     remove|upgrade|deconfigure)
         rm -f /usr/share/minecraft-installer/Minecraft.jar
-	rm -f /usr/share/pixmaps/minecraft-installer.xpm
-	rm -f /usr/share/pixmaps/minecraft-installer.png
+        rm -f /usr/share/pixmaps/minecraft-installer.xpm
+        rm -f /usr/share/pixmaps/minecraft-installer.png
     ;;
 
     failed-upgrade)
