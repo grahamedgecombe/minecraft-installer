@@ -1,3 +1,10 @@
+minecraft-installer (1.2) unstable; urgency=low
+
+  * Added a shell script named 'minecraft' to the path which can be used to run
+    the launcher
+
+ -- Graham Edgecombe <grahamedgecombe@gmail.com>  Fri, 14 Jan 2011 16:00:38 +0000
+
 minecraft-installer (1.1) unstable; urgency=low
 
   * Can now use curl or wget to download the jar/icon files
