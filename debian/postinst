@@ -20,13 +20,13 @@ set -e
 
 case "$1" in
     configure)
-    MINECRAFT_JAR_SRC=http://www.minecraft.net/download/Minecraft.jar
+    MINECRAFT_JAR_SRC=http://www.minecraft.net/download/minecraft.jar
     MINECRAFT_ICON_SRC=http://www.minecraft.net/favicon.png
 
     MINECRAFT_JAR_TMP=`tempfile -p minecraft -s .jar`
     MINECRAFT_ICON_TMP=`tempfile -p favicon -s .png`
 
-    MINECRAFT_JAR_DST=/usr/share/minecraft-installer/Minecraft.jar
+    MINECRAFT_JAR_DST=/usr/share/minecraft-installer/minecraft.jar
     MINECRAFT_ICON_DST_XPM=/usr/share/pixmaps/minecraft-installer.xpm
     MINECRAFT_ICON_DST_PNG=/usr/share/pixmaps/minecraft-installer.png
 
