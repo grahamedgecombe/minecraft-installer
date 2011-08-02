@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/java -Xmx1024M -Xms512M -cp /usr/share/minecraft-installer/minecraft.jar net.minecraft.LauncherFrame
+/usr/lib/jvm/java-6-sun/bin/java -Xmx1024M -Xms512M -cp /usr/share/minecraft-installer/minecraft.jar net.minecraft.LauncherFrame
