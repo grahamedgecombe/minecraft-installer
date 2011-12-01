@@ -1,0 +1,3 @@
+?package(minecraft-server-installer):needs="text" section="Games"\
+  title="Minecraft" command="/usr/games/minecraft-server"\
+  icon="/usr/share/pixmaps/minecraft-server-installer.xpm"
