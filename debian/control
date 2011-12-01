@@ -10,6 +10,6 @@ Vcs-Browser: http://github.com/grahamedgecombe/minecraft-installer
 
 Package: minecraft-installer
 Architecture: all
-Depends: ${misc:Depends}, openjdk-6-jre | sun-java6-jre, wget | curl, imagemagick
+Depends: ${misc:Depends}, default-jre, wget | curl, imagemagick
 Description: Minecraft
  Downloads and installs the official Minecraft client.
