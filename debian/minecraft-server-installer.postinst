@@ -40,11 +40,11 @@ case "$1" in
 
     mv $MINECRAFT_JAR_TMP $MINECRAFT_JAR_DST
 
-    convert $MINECRAFT_ICON_TMP -gravity north -stroke none -strokesize 2 \
-	-fill black -pointsize 15 -annotate +0-1 'srv' $MINECRAFT_ICON_DST_XPM
+    convert $MINECRAFT_ICON_TMP -gravity north -stroke none -fill black \
+		-pointsize 15 -annotate +0-1 'srv' $MINECRAFT_ICON_DST_XPM
 
-    convert $MINECRAFT_ICON_TMP -gravity north -stroke none -strokesize 2 \
-	-fill black -pointsize 15 -annotate +0-1 'srv' $MINECRAFT_ICON_DST_PNG
+    convert $MINECRAFT_ICON_TMP -gravity north -stroke none -fill black \
+		-pointsize 15 -annotate +0-1 'srv' $MINECRAFT_ICON_DST_PNG
 
     chmod 0644 $MINECRAFT_JAR_DST
     chmod 0644 $MINECRAFT_ICON_DST_XPM
