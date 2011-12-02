@@ -5,6 +5,7 @@ for arg in "$@"; do
 	-h|-help|--help) echo "unhelpful" ;;
 	--default-path) default_path=true ;;
 	esac
+done
 
 if [ "$default_path" = "true" ]; then
 	if [ ! -d $HOME/.minecraft/server ]; then
