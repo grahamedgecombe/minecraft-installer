@@ -1,3 +1,8 @@
 #!/bin/sh
 
+if [ ! -d $HOME/.minecraft/server ]: then
+	mkdir -p $HOME/.minecraft/server || exit 1
+fi
+
+cd $HOME/.minecraft/server || exit 1
 exec /usr/bin/java -Xmx1024M -Xms512M -jar /usr/share/minecraft-installer/minecraft_server.jar nogui ${1+"$@"}
