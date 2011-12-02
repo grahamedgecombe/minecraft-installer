@@ -7,7 +7,7 @@ for arg in "$@"; do
 	esac
 
 if [ "$default_path" = "true" ]; then
-	if [ ! -d $HOME/.minecraft/server ]: then
+	if [ ! -d $HOME/.minecraft/server ]; then
 		mkdir -p $HOME/.minecraft/server || exit 1
 	fi
 	cd $HOME/.minecraft/server || exit 1
