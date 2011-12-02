@@ -1,8 +1,20 @@
 #!/bin/sh
 
-if [ ! -d $HOME/.minecraft/server ]: then
-	mkdir -p $HOME/.minecraft/server || exit 1
-fi
+for arg in "$@"; do
+	case "$arg" in
+	-h|-help|--help) echo "unhelpful" ;;
+	--default-path) default_path=true
 
-cd $HOME/.minecraft/server || exit 1
-exec /usr/bin/java -Xmx1024M -Xms512M -jar /usr/share/minecraft-installer/minecraft_server.jar nogui ${1+"$@"}
+if [ "$default_path" = "true" ]; then
+	if [ ! -d $HOME/.minecraft/server ]: then
+		mkdir -p $HOME/.minecraft/server || exit 1
+	fi
+	cd $HOME/.minecraft/server || exit 1
+	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
+			/usr/share/minecraft-installer/minecraft_server.jar \
+			nogui ${1+"$@"}
+else
+	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
+			/usr/share/minecraft-installer/minecraft_server.jar \
+			nogui ${1+"$@"}
+fi
