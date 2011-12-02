@@ -4,5 +4,5 @@ Name=Minecraft
 GenericName=Sandbox Building Game Server
 Icon=minecraft-server-installer
 Exec=minecraft-server
-Terminal=false
+Terminal=true
 Categories=Game
