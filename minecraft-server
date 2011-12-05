@@ -1,0 +1,18 @@
+#!/bin/sh
+
+for arg in "$@"; do
+	case "$arg" in
+	-h|-help|--help) echo "unhelpful" ;;
+	--default-path) default_path=true ;;
+	esac
+done
+
+if [ "$default_path" = "true" ]; then
+	if [ ! -d $HOME/.minecraft/server ]; then
+		mkdir -p $HOME/.minecraft/server || exit 1
+	fi
+	cd $HOME/.minecraft/server || exit 1
+fi
+exec /usr/bin/java -Xmx1024M -Xms512M -jar \
+			/usr/share/minecraft-installer/minecraft_server.jar \
+			nogui ${1+"$@"}

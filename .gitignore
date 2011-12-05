@@ -1,4 +1,3 @@
-build-stamp
 debian/files
 debian/minecraft-installer.debhelper.log
 debian/minecraft-installer.substvars
