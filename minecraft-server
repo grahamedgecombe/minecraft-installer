@@ -12,11 +12,7 @@ if [ "$default_path" = "true" ]; then
 		mkdir -p $HOME/.minecraft/server || exit 1
 	fi
 	cd $HOME/.minecraft/server || exit 1
-	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
-			/usr/share/minecraft-installer/minecraft_server.jar \
-			nogui ${1+"$@"}
-else
-	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
-			/usr/share/minecraft-installer/minecraft_server.jar \
-			nogui ${1+"$@"}
 fi
+exec /usr/bin/java -Xmx1024M -Xms512M -jar \
+			/usr/share/minecraft-installer/minecraft_server.jar \
+			nogui ${1+"$@"}
