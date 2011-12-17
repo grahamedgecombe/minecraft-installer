@@ -1,4 +1,12 @@
 debian/files
+debian/minecraft-installer
 debian/minecraft-installer.debhelper.log
 debian/minecraft-installer.substvars
-debian/minecraft-installer
+debian/minecraft-installer.postinst.debhelper
+debian/minecraft-installer.postrm.debhelper
+debian/minecraft-server-installer
+debian/minecraft-server-installer.debhelper.log
+debian/minecraft-server-installer.substvars
+debian/minecraft-server-installer.postinst.debhelper
+debian/minecraft-server-installer.postrm.debhelper
+

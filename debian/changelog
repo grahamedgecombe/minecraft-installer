@@ -1,3 +1,10 @@
+minecraft-installer (1.4) unstable; urgency=low
+
+  * Updated gitignore entries
+  * Merged Martin's changes.
+
+ -- Graham Edgecombe <grahamedgecombe@gmail.com>  Mon, 12 Dec 2011 11:48:15 +0000
+
 minecraft-installer (1.4~mew1) unstable; urgency=low
 
   * New package: minecraft-server-installer
