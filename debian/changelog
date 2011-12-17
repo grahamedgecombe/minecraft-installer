@@ -1,3 +1,9 @@
+minecraft-installer (1.4~mew1) UNRELEASED; urgency=low
+
+  * Server menu entry is now also called Server
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Sat, 17 Dec 2011 15:53:42 +0100
+
 minecraft-installer (1.4) unstable; urgency=low
 
   * Updated gitignore entries
