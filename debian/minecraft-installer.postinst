@@ -28,7 +28,11 @@ case "$1" in
 
     MINECRAFT_JAR_DST=/usr/share/minecraft-installer/minecraft.jar
     MINECRAFT_ICON_DST_XPM=/usr/share/pixmaps/minecraft-installer.xpm
-    MINECRAFT_ICON_DST_PNG=/usr/share/pixmaps/minecraft-installer.png
+    MINECRAFT_ICON_DST_PNGx32=/usr/share/icons/hicolor/32x32/apps/minecraft-installer.png
+    MINECRAFT_ICON_DST_PNGx48=/usr/share/icons/hicolor/48x48/apps/minecraft-installer.png
+    MINECRAFT_ICON_DST_PNGx64=/usr/share/icons/hicolor/64x64/apps/minecraft-installer.png
+    MINECRAFT_ICON_DST_PNGx128=/usr/share/icons/hicolor/128x128/apps/minecraft-installer.png
+
 
     if [ -e /usr/bin/wget ]; then
         wget -O $MINECRAFT_JAR_TMP $MINECRAFT_JAR_SRC
@@ -40,12 +44,30 @@ case "$1" in
 
     mv $MINECRAFT_JAR_TMP $MINECRAFT_JAR_DST
 
+    echo "Resizing and installing icons ..."
+
     convert $MINECRAFT_ICON_TMP -resize 32x32 $MINECRAFT_ICON_DST_XPM
-    mv $MINECRAFT_ICON_TMP $MINECRAFT_ICON_DST_PNG
+
+    cp $MINECRAFT_ICON_TMP $MINECRAFT_ICON_DST_PNGx32
+
+    convert $MINECRAFT_ICON_TMP -filter Point -resize x48 \
+						$MINECRAFT_ICON_DST_PNGx48
+
+    convert $MINECRAFT_ICON_TMP -filter Point -resize x64 \
+						$MINECRAFT_ICON_DST_PNGx64
+
+    convert $MINECRAFT_ICON_TMP -filter Point -resize x128 \
+						$MINECRAFT_ICON_DST_PNGx128
 
     chmod 0644 $MINECRAFT_JAR_DST
     chmod 0644 $MINECRAFT_ICON_DST_XPM
-    chmod 0644 $MINECRAFT_ICON_DST_PNG
+    chmod 0644 $MINECRAFT_ICON_DST_PNGx32
+    chmod 0644 $MINECRAFT_ICON_DST_PNGx48
+    chmod 0644 $MINECRAFT_ICON_DST_PNGx64
+    chmod 0644 $MINECRAFT_ICON_DST_PNGx128
+
+    echo "Manually triggering hicolor-icon-theme ..."
+    dpkg-trigger hicolor-icon-theme
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
