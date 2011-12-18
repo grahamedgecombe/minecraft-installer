@@ -1,3 +1,2 @@
 ?package(minecraft-server-installer):needs="text" section="Games/Adventure"\
-  title="Minecraft Server" command="/usr/games/minecraft-server --default-path"\
-  icon="/usr/share/pixmaps/minecraft-server-installer.xpm"
+  title="Minecraft Server" command="/usr/games/minecraft-server --default-path"

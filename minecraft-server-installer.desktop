@@ -2,7 +2,6 @@
 Type=Application
 Name=Minecraft Server
 GenericName=Sandbox Building Game Server
-Icon=minecraft-server-installer
 Exec=minecraft-server --default-path
 Terminal=true
 Categories=Game
