@@ -65,9 +65,6 @@ case "$1" in
     chmod 0644 $MINECRAFT_ICON_DST_PNGx48
     chmod 0644 $MINECRAFT_ICON_DST_PNGx64
     chmod 0644 $MINECRAFT_ICON_DST_PNGx128
-
-    echo "Manually triggering hicolor-icon-theme ..."
-    dpkg-trigger hicolor-icon-theme
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
