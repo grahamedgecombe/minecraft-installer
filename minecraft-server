@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 gui=false
 path="$HOME/.minecraft/server"
@@ -6,30 +6,30 @@ usage="USAGE: minecraft-server [-h|-help|--help] [-p|-path|--path <path>] [-g|-g
 
 while [ "${1+isset}" ]; do
 	case "$1" in
-	-h|-help|--help)
-		echo "$usage"
-		exit
-	;;
-	-p|-path|--path)
-		# hax to ignore "-foo" and avoid [[ -* ]]
-		if [ "${2#-}" != $2 ]; then
-			path=.
+		-h|-help|--help)
+			echo "$usage"
+			exit
+		;;
+		-p|-path|--path)
+			# hax to ignore "-foo" and avoid bashismly [[ -* ]]
+			if [ "${2#-}" != $2 ]; then
+				path=.
+				shift
+			elif [ "$2" ]; then
+				path="$2"
+				shift 2
+			else
+				path=.
+				shift
+			fi
+		;;
+		-g|-gui|--gui)
+			gui=true
 			shift
-		elif [ "$2" ]; then
-			path="$2"
-			shift 2
-		else
-			path=.
+		;;
+		*)
 			shift
-		fi
-	;;
-	-g|-gui|--gui)
-		gui=true
-		shift
-	;;
-	*)
-		shift
-	;;
+		;;
 	esac
 done
 
