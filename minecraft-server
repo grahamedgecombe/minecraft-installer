@@ -1,22 +1,35 @@
-#!/bin/sh
+#!/bin/bash
 
 gui=false
 path="$HOME/.minecraft/server"
+usage="USAGE: minecraft-server [-h|-help|--help] [-p|-path|--path <path>] [-g|-gui|--gui]"
 
-while [[ $1 = -* ]]; do
+while [ "${1+isset}" ]; do
 	case "$1" in
-		-h|-help|--help)
-			echo "unhelpful"
-			exit
-		;;
-		-p|-path|--path)
+	-h|-help|--help)
+		echo "$usage"
+		exit
+	;;
+	-p|-path|--path)
+		# hax to ignore "-foo" and avoid [[ -* ]]
+		if [ "${2#-}" != $2 ]; then
+			path=.
+			shift
+		elif [ "$2" ]; then
 			path="$2"
 			shift 2
-		;;
-		-g|-gui|--gui)
-			gui=true
-			shift 1
-		;;
+		else
+			path=.
+			shift
+		fi
+	;;
+	-g|-gui|--gui)
+		gui=true
+		shift
+	;;
+	*)
+		shift
+	;;
 	esac
 done
 
@@ -26,12 +39,12 @@ fi
 
 cd "$path" || exit 1
 
-if [ "$gui"=true ]; then
+if [ "$gui" = true ]; then
 	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
 			/usr/share/minecraft-installer/minecraft_server.jar \
-			nogui ${1+"$@"}
+			${1+"$@"}
 else
 	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
 		/usr/share/minecraft-installer/minecraft_server.jar \
-			{1+"$@"}
+			nogui {1+"$@"}
 fi
