@@ -1,3 +1,10 @@
 #!/bin/sh
+for arg in "$@"; do
+	case "$arg" in
+		-h|-help|--help)
+			exec man minecraft
+		;;
+	esac
+done
 
 exec /usr/bin/java -Xmx1024M -Xms512M -cp /usr/share/minecraft-installer/minecraft.jar net.minecraft.LauncherFrame ${1+"$@"}

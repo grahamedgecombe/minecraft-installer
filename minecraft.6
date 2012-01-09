@@ -1,0 +1,43 @@
+.TH MINECRAFT 6 2011-12-10 "Minecraft 1.0.1" "Minecraft Manual"
+.SH NAME
+minecraft \- script to launch the Minecraft game client
+.SH SYNOPSIS
+.B minecraft
+[
+.I name
+[
+.I password
+]
+]
+[
+.BR \-h | \-help | \-\-help
+]
+.SH DESCRIPTION
+Minecraft is a game about placing blocks to build anything you can imagine. At night monsters come out, make sure to build a shelter before that happens. It also has music by C418!
+.PP
+.B minecraft
+is a script which starts the Minecraft client via
+.br
+.I java
+.B -Xmx1024M -Xms512M -cp
+.I minecraft.jar
+.B net.minecraft.LauncherFrame
+.SH OPTIONS
+.TP
+.I name
+.br
+Set login name
+.TP
+.I password
+.br
+Set login password and log in automatically
+.TP
+.BR \-h | \-help | \-\-help
+.br
+Display this manual page
+.SH AUTHORS
+Minecraft was developed by Mojang
+.PP
+This manual page was written by Martin Erik Werner \%<martinerikwerner@gmail.com>
+.SH "SEE ALSO"
+.BR minecraft-server (6).

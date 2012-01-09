@@ -1,0 +1,40 @@
+.TH MINECRAFT-SERVER 6 2011-12-10 "Minecraft 1.0.1" "Minecraft Server Manual"
+.SH NAME
+minecraft-server \- script to launch the Minecraft dedicated server
+.SH SYNOPSIS
+.B minecraft-server
+[
+.BR \-p | \-path | \-\-path " \fI path"
+]
+[
+.BR \-g | \-gui | \-\-gui
+]
+[
+.BR \-h | \-help | \-\-help
+]
+.SH DESCRIPTION
+.B minecraft-server
+is a script which starts the Minecraft dedicated server via
+.br
+.I java
+.B -Xmx1024M -Xms512M -jar
+.I minecraft_server.jar
+.SH OPTIONS
+.TP
+.BR \-p | \-path | \-\-path " \fIpath"
+.br
+Set the path where the server data is written, defaults to the current working directory if no path is specified, or $HOME/.minecraft/server if not set.
+.TP
+.BR \-g | \-gui | \-\-gui
+.br
+Start the GUI interface to the server
+.TP
+.BR \-h | \-help | \-\-help
+.br
+Display this manual page
+.SH AUTHORS
+Minecraft was developed by Mojang
+.PP
+This manual page was written by Martin Erik Werner \%<martinerikwerner@gmail.com>
+.SH "SEE ALSO"
+.BR minecraft (6).

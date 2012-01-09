@@ -2,13 +2,11 @@
 
 gui=false
 path="$HOME/.minecraft/server"
-usage="USAGE: minecraft-server [-h|-help|--help] [-p|-path|--path <path>] [-g|-gui|--gui]"
 
 while [ "${1+isset}" ]; do
 	case "$1" in
 		-h|-help|--help)
-			echo "$usage"
-			exit
+			exec man minecraft-server
 		;;
 		-p|-path|--path)
 			# hax to ignore "-foo" and avoid bashismly [[ -* ]]
