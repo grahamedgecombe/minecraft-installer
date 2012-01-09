@@ -28,7 +28,7 @@ while [ "${1+isset}" ]; do
 			shift
 		;;
 		*)
-			shift
+			break
 		;;
 	esac
 done
