@@ -1,5 +1,8 @@
 #!/bin/sh
 
+gui=false
+path="$HOME/.minecraft/server"
+
 while [[ $1 = -* ]]; do
 	case "$1" in
 		-h|-help|--help)
@@ -10,16 +13,25 @@ while [[ $1 = -* ]]; do
 			path="$2"
 			shift 2
 		;;
+		-g|-gui|--gui)
+			gui=true
+			shift 1
+		;;
 	esac
 done
 
-if [ ! "$path" ]; then
-	path="$HOME/.minecraft/server"
 if [ ! -d "$path" ]; then
 	mkdir -p "$path" || exit 1
 fi
 
 cd "$path" || exit 1
-exec /usr/bin/java -Xmx1024M -Xms512M -jar \
+
+if [ "$gui"=true ]; then
+	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
 			/usr/share/minecraft-installer/minecraft_server.jar \
 			nogui ${1+"$@"}
+else
+	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
+		/usr/share/minecraft-installer/minecraft_server.jar \
+			{1+"$@"}
+fi
