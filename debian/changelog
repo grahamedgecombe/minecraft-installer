@@ -2,11 +2,11 @@ minecraft-installer (1.5~mew1) UNRELEASED; urgency=low
 
   * Server now defaults to the home dir unless a path option is passed
   * Server menu entry is now also called "Server"
-  * Generate x48, x64 and x128 icons
+  * New custom high-res icon
   * Disable using custom icons for server
   * Pre-Depends: imagemagick for client
 
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 09 Jan 2012 16:32:11 +0100
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Tue, 10 Jan 2012 01:47:41 +0100
 
 minecraft-installer (1.4) unstable; urgency=low
 
