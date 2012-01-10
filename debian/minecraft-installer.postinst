@@ -21,17 +21,17 @@ set -e
 case "$1" in
     configure)
     MINECRAFT_JAR_SRC=http://www.minecraft.net/download/minecraft.jar
-    MINECRAFT_ICON_SRC=http://www.minecraft.net/favicon.png
+    MINECRAFT_ICON_SRC=http://www.deviantart.com/download/187560800/minecraft_icon_by_kaishinchan-d33o2u8.zip
 
     MINECRAFT_JAR_TMP=`tempfile -p minecraft -s .jar`
-    MINECRAFT_ICON_TMP=`tempfile -p favicon -s .png`
+    MINECRAFT_ICON_TMP=`tempfile -p minecraft_icon -s .zip`
 
     MINECRAFT_JAR_DST=/usr/share/minecraft-installer/minecraft.jar
     MINECRAFT_ICON_DST_XPM=/usr/share/pixmaps/minecraft-installer.xpm
     MINECRAFT_ICON_DST_PNGx32=/usr/share/icons/hicolor/32x32/apps/minecraft-installer.png
     MINECRAFT_ICON_DST_PNGx48=/usr/share/icons/hicolor/48x48/apps/minecraft-installer.png
-    MINECRAFT_ICON_DST_PNGx64=/usr/share/icons/hicolor/64x64/apps/minecraft-installer.png
     MINECRAFT_ICON_DST_PNGx128=/usr/share/icons/hicolor/128x128/apps/minecraft-installer.png
+    MINECRAFT_ICON_DST_PNGx256=/usr/share/icons/hicolor/256x256/apps/minecraft-installer.png
 
 
     if [ -e /usr/bin/wget ]; then
@@ -44,27 +44,28 @@ case "$1" in
 
     mv $MINECRAFT_JAR_TMP $MINECRAFT_JAR_DST
 
-    echo "Resizing and installing icons ..."
+    echo "Extracting and installing icons ..."
 
-    convert $MINECRAFT_ICON_TMP -resize 32x32 $MINECRAFT_ICON_DST_XPM
+    unzip -p $MINECRAFT_ICON_TMP Minecraft/PNG/32/Minecraft.png \
+        > $MINECRAFT_ICON_DST_PNGx32
 
-    cp $MINECRAFT_ICON_TMP $MINECRAFT_ICON_DST_PNGx32
+    unzip -p $MINECRAFT_ICON_TMP Minecraft/PNG/48/Minecraft.png \
+        > $MINECRAFT_ICON_DST_PNGx48
 
-    convert $MINECRAFT_ICON_TMP -filter Point -resize x48 \
-						$MINECRAFT_ICON_DST_PNGx48
+    unzip -p $MINECRAFT_ICON_TMP Minecraft/PNG/128/Minecraft.png \
+        > $MINECRAFT_ICON_DST_PNGx128
 
-    convert $MINECRAFT_ICON_TMP -filter Point -resize x64 \
-						$MINECRAFT_ICON_DST_PNGx64
+    unzip -p $MINECRAFT_ICON_TMP Minecraft/PNG/256/Minecraft.png \
+        > $MINECRAFT_ICON_DST_PNGx256
 
-    convert $MINECRAFT_ICON_TMP -filter Point -resize x128 \
-						$MINECRAFT_ICON_DST_PNGx128
+    convert $MINECRAFT_ICON_DST_PNGx32 $MINECRAFT_ICON_DST_XPM
 
     chmod 0644 $MINECRAFT_JAR_DST
     chmod 0644 $MINECRAFT_ICON_DST_XPM
     chmod 0644 $MINECRAFT_ICON_DST_PNGx32
     chmod 0644 $MINECRAFT_ICON_DST_PNGx48
-    chmod 0644 $MINECRAFT_ICON_DST_PNGx64
     chmod 0644 $MINECRAFT_ICON_DST_PNGx128
+    chmod 0644 $MINECRAFT_ICON_DST_PNGx256
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

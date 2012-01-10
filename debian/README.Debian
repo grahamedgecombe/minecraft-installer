@@ -1,9 +1,0 @@
-minecraft-installer for Debian
-------------------------------
-
-This package installs the Minecraft client and server by downloading it from
-the official Minecraft website. This package does *not* contain the Minecraft
-client itself as that would breach copyright laws and the wishes of Markus
-Persson, the author of Minecraft.
-
- -- Martin Erik Werner <martinerikwerner@gmail.com>  Fri, 02 Dec 2011 01:27:18 +0100
