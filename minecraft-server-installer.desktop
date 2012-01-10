@@ -3,5 +3,5 @@ Type=Application
 Name=Minecraft Server
 GenericName=Sandbox Building Game Server
 Exec=minecraft-server --gui
-Terminal=true
+Terminal=false
 Categories=Game
