@@ -1,3 +1,11 @@
+minecraft-installer (1.5~mew2) UNRELEASED; urgency=low
+
+  * Removed custom high-res icon
+  * Enable updates past Minecraft version 1.5.2
+  * Update launcher scripts to work for current Minecraft version 1.6.4
+
+ -- Martin Erik Werner <martinerikwerner@gmail.com>  Mon, 14 Oct 2013 14:20:23 +0200
+
 minecraft-installer (1.5~mew1) UNRELEASED; urgency=low
 
   * Server now defaults to the home dir unless a path option is passed
