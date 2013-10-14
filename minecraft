@@ -7,4 +7,4 @@ for arg in "$@"; do
 	esac
 done
 
-exec /usr/bin/java -Xmx1024M -Xms512M -cp /usr/share/minecraft-installer/minecraft.jar net.minecraft.LauncherFrame ${1+"$@"}
+exec java -jar /usr/share/minecraft-installer/minecraft.jar "$@"

@@ -38,11 +38,9 @@ fi
 cd "$path" || exit 1
 
 if [ "$gui" = true ]; then
-	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
-			/usr/share/minecraft-installer/minecraft_server.jar \
-			${1+"$@"}
+	exec java -Xmx1024M -Xms1024M -jar \
+		/usr/share/minecraft-installer/minecraft_server.jar "$@"
 else
-	exec /usr/bin/java -Xmx1024M -Xms512M -jar \
-		/usr/share/minecraft-installer/minecraft_server.jar \
-			nogui {1+"$@"}
+	exec java -Xmx1024M -Xms1024M -jar \
+		/usr/share/minecraft-installer/minecraft_server.jar nogui "$@"
 fi
