@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for minecraft-installer
+# postinst script for minecraft-server-installer
 #
 # see: dh_installdeb(1)
 
@@ -20,16 +20,19 @@ set -e
 
 case "$1" in
     configure)
-    MINECRAFT_JAR_SRC=http://www.minecraft.net/download/minecraft_server.jar
+    MINECRAFT_BASE_SRC="http://s3.amazonaws.com/Minecraft.Download/versions"
+    MINECRAFT_VERSIONS_SRC="$MINECRAFT_BASE_SRC/versions.json"
 
     MINECRAFT_JAR_TMP=`tempfile -p minecraft_server -s .jar`
 
     MINECRAFT_JAR_DST=/usr/share/minecraft-installer/minecraft_server.jar
 
-    if [ -e /usr/bin/wget ]; then
-        wget -O $MINECRAFT_JAR_TMP $MINECRAFT_JAR_SRC
+    if (hash wget); then
+        MINECRAFT_LATEST_VERSION="$(wget -O - "$MINECRAFT_VERSIONS_SRC" | sed -n 's/^ *"release": "\([^"]*\)".*/\1/p')"
+        wget -O "$MINECRAFT_JAR_TMP" "$MINECRAFT_BASE_SRC/$MINECRAFT_LATEST_VERSION/minecraft_server.${MINECRAFT_LATEST_VERSION}.jar"
     else
-        curl $MINECRAFT_JAR_SRC >$MINECRAFT_JAR_TMP
+        MINECRAFT_LATEST_VERSION="$(curl "$MINECRAFT_VERSIONS_SRC" | sed -n 's/^ *"release": "\([^"]*\)".*/\1/p')"
+        curl -o "$MINECRAFT_JAR_TMP" "$MINECRAFT_BASE_SRC/$MINECRAFT_LATEST_VERSION/minecraft_server.${MINECRAFT_LATEST_VERSION}.jar"
     fi
 
     mv $MINECRAFT_JAR_TMP $MINECRAFT_JAR_DST
