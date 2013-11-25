@@ -20,7 +20,7 @@ set -e
 
 case "$1" in
     configure)
-    MINECRAFT_JAR_SRC=http://www.minecraft.net/download/minecraft.jar
+    MINECRAFT_JAR_SRC=https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
     MINECRAFT_ICON_SRC=http://www.minecraft.net/favicon.png
 
     MINECRAFT_JAR_TMP=`tempfile -p minecraft -s .jar`
