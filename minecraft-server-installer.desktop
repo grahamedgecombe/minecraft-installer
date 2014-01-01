@@ -5,3 +5,4 @@ GenericName=Sandbox Building Game Server
 Exec=minecraft-server --gui
 Terminal=false
 Categories=Game
+Keywords=sandbox,build,block,multiplayer,adventure

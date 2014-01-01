@@ -6,3 +6,4 @@ Icon=minecraft-installer
 Exec=minecraft
 Terminal=false
 Categories=Game
+Keywords=sandbox,build,block,multiplayer,adventure
