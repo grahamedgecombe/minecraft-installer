@@ -1,3 +1,11 @@
+minecraft-installer (1.6) unstable; urgency=low
+
+  * Add headless server support
+  * Add override for menu-icon-missing lintian warning
+  * Fix /usr/share/minecraft-installer directory in server package
+
+ -- Graham Edgecombe <graham@grahamedgecombe.com>  Wed, 13 Aug 2014 15:40:58 +0100
+
 minecraft-installer (1.5) unstable; urgency=low
 
   * Merge Martin's changes
