@@ -1,3 +1,14 @@
+minecraft-installer (1.5) unstable; urgency=low
+
+  * Merge Martin's changes
+  * Fix lintian virtual-package-depends-without-real-package-depends warning
+    by specifying openjdk-7-jre before java-runtime
+  * Update my email address
+  * Bump Standards-Version to 3.9.5
+  * Change short description of server package to 'Minecraft Server'
+
+ -- Graham Edgecombe <graham@grahamedgecombe.com>  Wed, 13 Aug 2014 14:45:16 +0100
+
 minecraft-installer (1.5~mew2) UNRELEASED; urgency=low
 
   * Removed custom high-res icon
