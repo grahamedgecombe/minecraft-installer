@@ -3,7 +3,7 @@ Section: games
 Priority: extra
 Maintainer: Graham Edgecombe <graham@grahamedgecombe.com>
 Build-Depends: debhelper (>= 8)
-Standards-Version: 3.9.2
+Standards-Version: 3.9.5
 Homepage: http://www.grahamedgecombe.com/projects/minecraft-installer
 Vcs-Git: git://github.com/grahamedgecombe/minecraft-installer.git
 Vcs-Browser: http://github.com/grahamedgecombe/minecraft-installer
