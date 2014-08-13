@@ -11,12 +11,13 @@ Vcs-Browser: http://github.com/grahamedgecombe/minecraft-installer
 Package: minecraft-installer
 Architecture: all
 Pre-Depends: imagemagick
-Depends: ${misc:Depends}, openjdk-7-jre | java-runtime, wget | curl
+Depends: ${misc:Depends}, default-jre | java-runtime, wget | curl
 Description: Minecraft
  Downloads and installs the official Minecraft client.
 
 Package: minecraft-server-installer
 Architecture: all
-Depends: ${misc:Depends}, openjdk-7-jre | java-runtime, wget | curl
+Depends: ${misc:Depends}, default-jre-headless | java-runtime-headless, wget | curl
+Suggests: default-jre | java-runtime
 Description: Minecraft Server
  Downloads and installs the official Minecraft server.
