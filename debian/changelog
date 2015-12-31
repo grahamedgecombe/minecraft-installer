@@ -1,3 +1,9 @@
+minecraft-installer (1.7) unstable; urgency=low
+
+  * Merge Martin's changes.
+
+ -- Graham Edgecombe <gpe@grahamedgecombe.com>  Thu, 31 Dec 2015 15:23:58 +0000
+
 minecraft-installer (1.7~flexiondotorg1) UNRELEASED; urgency=medium
 
   * debian/minecraft-installer.postinst: Use http to avoid certificate errors.
