@@ -4,7 +4,7 @@ Upstream-Contact: Graham Edgecombe <graham@grahamedgecombe.com>
 Source: https://github.com/grahamedgecombe/minecraft-installer
 
 Files: *
-Copyright: 2010, 2011, 2014 Graham Edgecombe <graham@grahamedgecombe.com>
+Copyright: 2010, 2011, 2014, 2017 Graham Edgecombe <graham@grahamedgecombe.com>
            2011 Martin Erik Werner <martinerikwerner@gmail.com>
 License: GPL-3
  This program is free software: you can redistribute it and/or modify
