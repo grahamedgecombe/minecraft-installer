@@ -1,3 +1,9 @@
+minecraft-installer (1.8) unstable; urgency=low
+
+  * Switch to new favicon URL
+
+ -- Graham Edgecombe <gpe@grahamedgecombe.com>  Sun, 22 Jan 2017 08:57:51 +0000
+
 minecraft-installer (1.7) unstable; urgency=low
 
   * Merge Martin's changes.
