@@ -21,7 +21,7 @@ set -e
 case "$1" in
     configure)
     MINECRAFT_JAR_SRC=http://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
-    MINECRAFT_ICON_SRC=http://www.minecraft.net/favicon.png
+    MINECRAFT_ICON_SRC=http://www.minecraft.net/android-icon-192x192.png
 
     MINECRAFT_JAR_TMP=`tempfile -p minecraft -s .jar`
     MINECRAFT_ICON_TMP=`tempfile -p favicon -s .png`
@@ -46,18 +46,20 @@ case "$1" in
 
     echo "Resizing and installing icons ..."
 
-    convert $MINECRAFT_ICON_TMP -resize 32x32 $MINECRAFT_ICON_DST_XPM
+    convert $MINECRAFT_ICON_TMP -resize x32 \
+            $MINECRAFT_ICON_DST_XPM
 
-    cp $MINECRAFT_ICON_TMP $MINECRAFT_ICON_DST_PNGx32
+    convert $MINECRAFT_ICON_TMP -resize x32 \
+            $MINECRAFT_ICON_DST_PNGx32
 
-    convert $MINECRAFT_ICON_TMP -filter Point -resize x48 \
-						$MINECRAFT_ICON_DST_PNGx48
+    convert $MINECRAFT_ICON_TMP -resize x48 \
+            $MINECRAFT_ICON_DST_PNGx48
 
-    convert $MINECRAFT_ICON_TMP -filter Point -resize x64 \
-						$MINECRAFT_ICON_DST_PNGx64
+    convert $MINECRAFT_ICON_TMP -resize x64 \
+            $MINECRAFT_ICON_DST_PNGx64
 
-    convert $MINECRAFT_ICON_TMP -filter Point -resize x128 \
-						$MINECRAFT_ICON_DST_PNGx128
+    convert $MINECRAFT_ICON_TMP -resize x128 \
+            $MINECRAFT_ICON_DST_PNGx128
 
     chmod 0644 $MINECRAFT_JAR_DST
     chmod 0644 $MINECRAFT_ICON_DST_XPM
