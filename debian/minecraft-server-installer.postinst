@@ -14,13 +14,13 @@ set -e
 #        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
 #          <failed-install-package> <version> `removing'
 #          <conflicting-package> <version>
-# for details, see http://www.debian.org/doc/debian-policy/ or
+# for details, see https://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
 
 case "$1" in
     configure)
-    MINECRAFT_BASE_SRC="http://s3.amazonaws.com/Minecraft.Download/versions"
+    MINECRAFT_BASE_SRC="https://s3.amazonaws.com/Minecraft.Download/versions"
     MINECRAFT_VERSIONS_SRC="$MINECRAFT_BASE_SRC/versions.json"
 
     MINECRAFT_JAR_TMP=`tempfile -p minecraft_server -s .jar`
