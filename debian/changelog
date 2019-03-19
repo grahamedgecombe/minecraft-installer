@@ -1,4 +1,4 @@
-minecraft-installer (1.8_fix) unstable; urgency=low
+minecraft-installer (1.8~fix) unstable; urgency=low
 
   * Change icon URL, fixing broken functionality of package
 
