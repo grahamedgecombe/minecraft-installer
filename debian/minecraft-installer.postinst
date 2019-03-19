@@ -14,14 +14,17 @@ set -e
 #        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
 #          <failed-install-package> <version> `removing'
 #          <conflicting-package> <version>
-# for details, see http://www.debian.org/doc/debian-policy/ or
+# for details, see https://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
 
 case "$1" in
     configure)
-    MINECRAFT_JAR_SRC=http://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
-    MINECRAFT_ICON_SRC=http://www.minecraft.net/android-icon-192x192.png
+    MINECRAFT_JAR_SRC=https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
+    # MINECRAFT_ICON_SRC=https://www.minecraft.net/android-icon-192x192.png
+    # that's no longer available. I'm replacing it with another one that's...less official but still.
+    # It's impressive to me that the entire thing was tripping up on this. -TedsterTech
+    MINECRAFT_ICON_SRC=https://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/minecraft-icon.png
 
     MINECRAFT_JAR_TMP=`tempfile -p minecraft -s .jar`
     MINECRAFT_ICON_TMP=`tempfile -p favicon -s .png`
