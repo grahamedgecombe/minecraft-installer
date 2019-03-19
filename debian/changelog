@@ -1,3 +1,8 @@
+minecraft-installer (1.8_fix) unstable; urgency=low
+  * Change icon URL, fixing broken functionality of package
+
+   -- Ted Hart-Davis <tedster@tedster.net>  Tues, 19 Mar 2019 12:07:00 +0000
+
 minecraft-installer (1.8) unstable; urgency=low
 
   * Switch to new favicon URL
